@@ -1,0 +1,47 @@
+@import 'main';
+
+article {
+    margin: 1rem auto;
+    padding: 1rem;
+
+    h1.post-title {
+        margin-bottom: .5rem;
+        font-size: 2rem;
+    }
+
+    p {
+        font-size: 1.125rem;
+    }
+
+    .post-meta {
+        margin-bottom: .3rem;
+        font-size: .875rem;
+        color: color(text-meta);
+    }
+
+    .post-cover {
+        width: 100%;
+
+        img.cover-image {
+            width: 100%;
+            border-radius: 5px;
+        }
+        
+        .image-desc {
+            display: block;
+            font-size: .8rem;
+            color: color(text-intro);
+            text-align: center;
+        }
+    }
+
+    .post-content {
+
+        img.embedded-image {
+            text-align: center;
+            width: 100%;
+            border-radius: 5px;
+        }
+    }
+
+}

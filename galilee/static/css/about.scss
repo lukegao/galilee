@@ -1,0 +1,63 @@
+@import 'main';
+
+main {
+    .container {
+        margin: 2rem !important;
+        max-width: 840px !important;
+
+        h1 {
+            margin-bottom: .5rem;
+            font-size: 2rem;
+        }
+
+        h2 {
+            margin-bottom: .5rem;
+            font-size: 1.5rem;
+        }
+
+        p {
+            line-height: 1.5;
+            font-size: 1.125rem;
+            color: color(text-intro);
+        }
+
+        .subscribe-bottom {
+            text-align: center;
+            background-color: color(background-alt);
+            
+            padding-bottom: 1rem;
+
+            .intro {
+                display: inline-block;
+                margin-bottom: .5rem;
+            }
+
+            .signup {
+                display: flex;
+                flex-flow: row wrap;
+                align-items: center;
+                justify-content: center;
+
+                input {
+                    font-size: 1rem;
+                    box-sizing: border-box;
+                    display: inline-block;
+
+                    margin-bottom: .5rem;
+                    margin-left: .5rem;
+                    padding: .5rem;
+                    line-height: 1.5;
+                    border-radius: .25rem;
+                    border: 1px solid #9c9c9c;
+
+                    &.subscribe-btn {
+                        background-color: color(primary);
+                        color: color(text);
+                        border: none;
+                        font-weight: bold;
+                    }
+                };
+            }
+        }
+    }
+}
