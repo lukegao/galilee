@@ -24,7 +24,6 @@ class SubscribeBlock(blocks.StructBlock):
 
     title = blocks.CharBlock(required=True, help_text="Subscribe Title")
     intro = blocks.TextBlock(required=True)
-
     email = blocks.EmailBlock(required=True)
 
     class Meta: # noqa

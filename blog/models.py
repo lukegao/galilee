@@ -16,7 +16,23 @@ from wagtail.contrib.routable_page.models import route, RoutablePageMixin
 
 from modelcluster.fields import ParentalManyToManyField
 
+from streams import blocks
 
+
+@register_snippet
+class Subscription(models.Model):
+    """Static contents for subscription"""
+
+    title = models.CharField(max_length=255, blank=False, null=True)
+    intro = models.CharField(max_length=500, blank=False, null=True)
+
+    panels = [
+        FieldPanel('name'),
+        FieldPanel('intro'),
+    ]
+
+
+@register_snippet
 class BlogCategory(models.Model):
     """Blog Category for a snippet"""
 
@@ -40,9 +56,6 @@ class BlogCategory(models.Model):
 
     def __str__(self):
         return self.name
-
-
-register_snippet(BlogCategory)
 
 
 class BlogListPage(RoutablePageMixin, Page):
@@ -96,6 +109,8 @@ class BlogPostPage(Page):
     subpage_types = []
     parent_page_types = ['blog.BlogListPage', 'home.HomePage']
 
+    intro = models.CharField(max_length=255, blank=False, null=True)
+
     cover_image = models.ForeignKey(
         "wagtailimages.Image",
         blank=False,
@@ -108,13 +123,16 @@ class BlogPostPage(Page):
 
     content = StreamField(
         [
-
+            ('inline image', blocks.InlineImageBlock),
+            ('paragraph', blocks.SimpleRichTextBlock),
+            ('subscribe', blocks.SubscribeBlock),
         ],
         null=True,
-        blank=True,
+        blank=False,
     )
 
     content_panels = Page.content_panels + [
+        FieldPanel('intro'),
         ImageChooserPanel("cover_image"),
         MultiFieldPanel(
             [
