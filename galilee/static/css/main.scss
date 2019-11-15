@@ -35,7 +35,8 @@ html, body {
         background-color: #fff;
         height: 100%;
 
-        font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+        // font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+        font-family: 'Roboto', sans-serif;
 }
 
 header {
@@ -79,6 +80,7 @@ header {
         justify-content: space-between;
 
         padding: 1rem;
+
         @include desktop {
             flex-flow: row nowrap;
             justify-content: flex-start;
@@ -130,6 +132,7 @@ header {
                     max-width: 160px;
                     margin-left: auto;
                     margin-right: auto;
+                    margin-bottom: .5rem;
                     border-radius: 50%;
 
                     vertical-align: middle;
@@ -221,6 +224,10 @@ header {
                     vertical-align: middle;
                     line-height: 1.5;
                     padding: .75rem;
+
+                    &:hover {
+                        color: color(primary-darken);
+                    }
                 }
             }
         }
@@ -286,17 +293,16 @@ main {
                         margin-bottom: .5rem;
                         padding: .375rem .75rem;
                         line-height: 1.5rem;
-    
                         border-radius: .25rem;
                         border: 1px solid #9c9c9c;
-                        
+
                         @include desktop() {
                             margin-bottom: 0;
                             width: auto;
                             margin-right: 1rem;
                         }
                     }
-    
+
                     input:last-child {
                         margin-bottom: 0;
                         text-align: center;
@@ -304,6 +310,11 @@ main {
                         border-color: color(primary);
                         color: color(text);
                         font-weight: bold;
+                    }
+
+                    input.subscribe-btn:hover {
+                        cursor: pointer;
+                        color: color(primary-darken);
                     }
                 }
             }
@@ -371,6 +382,7 @@ main {
         .page-btn {
             font-weight: bold;
             font-size: 1.125rem;
+            line-height: 2;
     
             border-radius: 5px;
             background-color: color(primary);
@@ -386,7 +398,6 @@ main {
                 text-decoration: none;
     
                 width: 100%;
-                line-height: 2rem;
                 text-align: center;
     
                 position: relative;
