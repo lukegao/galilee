@@ -44,3 +44,10 @@ class AuthorProfile(models.Model):
             heading='Social media',
         )
     ]
+
+    def __str__(self):
+        return "{} {}".format(self.first_name, self.family_name)
+
+    class Meta: # noqa
+        verbose_name = "Site Owner"
+        verbose_name_plural = "Site Owners"

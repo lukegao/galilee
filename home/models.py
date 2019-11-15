@@ -1,9 +1,4 @@
-from django.db import models
-
 from wagtail.core.models import Page
-from wagtail.snippets.models import register_snippet
-from wagtail.admin.edit_handlers import FieldPanel, MultiFieldPanel
-from wagtail.images.edit_handlers import ImageChooserPanel
 
 from blog.models import BlogPostPage
 
