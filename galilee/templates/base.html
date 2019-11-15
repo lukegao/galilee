@@ -1,3 +1,5 @@
+{% load static wagtailimages_tags get_profile %}
+
 <!DOCTYPE html>
 <html class="no-js" lang="en">
     <head>
@@ -26,6 +28,41 @@
     </head>
 
     <body class="{% block body_class %}{% endblock %}">
+
+        <header>
+            <h1>{{ page.title }}</h1>
+
+            {% image profile.avatar as img %}
+            <nav class="navbar">
+                <button class="navbar-toggler" data-target="#navigation">
+                    <span class="navbar-toggler-icon"><i class="fas fa-bars"></i></span>
+                </button>
+                <div id="navigation" class="navbar-collapse collapse">
+                    <div class="profile-section">
+                        <img class="profile-image" src="{{ img.url }}" alt="{{ img.alt }}">
+                        <div class="bio">
+                            <span>{{ profile.intro }}</span><br>
+                            <a href="about">Find out more about me</a>
+                        </div>
+                        <ul class="social-account">
+                            <li><a href="{{ profile.wechat }}"><i class="fab fa-weixin"></i></a></i></li>
+                            <li><a href="{{ profile.linkedin }}"><i class="fab fa-linkedin"></i></a></li>
+                            <li><a href="{{ profile.github }}"><i class="fab fa-github"></i></a></li>
+                            <li><a href="{{ profile.twitter }}"><i class="fab fa-twitter"></i></a></li>
+                        </ul>
+                        <hr>
+                    </div>
+                    <ul class="navbar-nav">
+                        <li class="nav-item"><i class="fas fa-home fa-fw"></i><a href="/">Home</a></li>
+                        <li class="nav-item"><i class="fas fa-bookmark fa-fw"></i><a href="list">Blog</a></li>
+                        <li class="nav-item"><i class="fas fa-user fa-fw"></i><a href="about">About Me</a></li>
+                    </ul>
+                    <div class="cta">
+                        <a class="cta-btn" href="https://lukegao.me" target="_blank">Get in Touch</a>
+                    </div>
+                </div>
+            </nav>
+        </header>
 
         {% block content %}{% endblock %}
 
