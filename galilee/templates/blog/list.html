@@ -8,6 +8,7 @@
 {% block body_class %}listpage{% endblock body_class %}
 
 {% block content %}
+{% comment %} @TODO: add category subnav menu {% endcomment %}
     <main>
         <div class="container">
             <section class="blog-list">
@@ -30,8 +31,13 @@
             </section>
 
             <div class="page-btn">
-                <a href="/" >Prev<span class="prev"><i class="fas fa-arrow-circle-left fa-fw"></i></span></a>
-                <a href="list.html">Next<span class="next"><i class="fas fa-arrow-circle-right fa-fw"></i></span></a>
+                {% if posts.has_previouse %}
+                <a href="?page={{ posts.previous_page_number }}" >Prev<span class="prev"><i class="fas fa-arrow-circle-left fa-fw"></i></span></a>
+                {% endif %}
+
+                {% if posts.has_next %}
+                <a href="?page={{ posts.next_page_number }}">Next<span class="next"><i class="fas fa-arrow-circle-right fa-fw"></i></span></a>
+                {% endif %}
             </div>
         </div>
     </main>
