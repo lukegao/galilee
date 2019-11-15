@@ -231,6 +231,7 @@ main {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   margin-left: 0;
+  padding: 3rem 1rem;
 }
 
 @media (min-width: 840px) {
@@ -240,13 +241,13 @@ main {
   }
 }
 
-main div.selfcontainer {
+main div.container {
   margin-left: auto;
   margin-right: auto;
   max-width: 820px;
 }
 
-main div.selfcontainer section.subscribe {
+main div.container section.subscribe {
   background-color: #fafafa;
   display: block;
   -webkit-box-sizing: border-box;
@@ -257,11 +258,11 @@ main div.selfcontainer section.subscribe {
   margin-right: auto;
 }
 
-main div.selfcontainer section.subscribe .heading {
+main div.container section.subscribe .heading {
   text-align: center;
 }
 
-main div.selfcontainer section.subscribe .heading h2 {
+main div.container section.subscribe .heading h2 {
   font-size: 2rem;
   font-weight: bold;
   color: #292929;
@@ -269,7 +270,7 @@ main div.selfcontainer section.subscribe .heading h2 {
   margin-top: 0;
 }
 
-main div.selfcontainer section.subscribe .heading form.signup {
+main div.container section.subscribe .heading form.signup {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -288,7 +289,7 @@ main div.selfcontainer section.subscribe .heading form.signup {
 }
 
 @media (min-width: 840px) {
-  main div.selfcontainer section.subscribe .heading form.signup {
+  main div.container section.subscribe .heading form.signup {
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
         -ms-flex-flow: row nowrap;
@@ -296,7 +297,7 @@ main div.selfcontainer section.subscribe .heading form.signup {
   }
 }
 
-main div.selfcontainer section.subscribe .heading form.signup input {
+main div.container section.subscribe .heading form.signup input {
   font-size: 1rem;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -310,14 +311,14 @@ main div.selfcontainer section.subscribe .heading form.signup input {
 }
 
 @media (min-width: 840px) {
-  main div.selfcontainer section.subscribe .heading form.signup input {
+  main div.container section.subscribe .heading form.signup input {
     margin-bottom: 0;
     width: auto;
     margin-right: 1rem;
   }
 }
 
-main div.selfcontainer section.subscribe .heading form.signup input:last-child {
+main div.container section.subscribe .heading form.signup input:last-child {
   margin-bottom: 0;
   text-align: center;
   background-color: #5FCB71;
@@ -326,13 +327,12 @@ main div.selfcontainer section.subscribe .heading form.signup input:last-child {
   font-weight: bold;
 }
 
-main div.selfcontainer section.blog-list {
+main div.container section.blog-list {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  padding: 3rem;
 }
 
-main div.selfcontainer section.blog-list .post-item {
+main div.container section.blog-list .post-item {
   margin-bottom: 1rem;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -342,7 +342,7 @@ main div.selfcontainer section.blog-list .post-item {
           align-items: flex-start;
 }
 
-main div.selfcontainer section.blog-list .post-item img.post-image {
+main div.container section.blog-list .post-item img.post-image {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   border-radius: .5rem;
@@ -350,35 +350,47 @@ main div.selfcontainer section.blog-list .post-item img.post-image {
   max-width: 120px;
 }
 
-main div.selfcontainer section.blog-list .post-item .post-body h3.post-title {
+main div.container section.blog-list .post-item .post-body h3.post-title {
   margin-top: 0;
   margin-bottom: .2rem;
   font-size: 1.25rem;
 }
 
-main div.selfcontainer section.blog-list .post-item .post-body .post-meta {
+main div.container section.blog-list .post-item .post-body .post-meta {
   margin-bottom: .3rem;
   font-size: .875rem;
   font-weight: 300;
   color: #8f8f8f;
 }
 
-main div.selfcontainer section.blog-list .post-item .post-body .post-intro {
+main div.container section.blog-list .post-item .post-body .post-meta span:not(:last-child)::after {
+  content: "";
+  display: inline-block;
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background: #8f8f8f;
+  margin-left: 0.5rem;
+  margin-right: 0.2rem;
+  position: relative;
+  top: -3px;
+}
+
+main div.container section.blog-list .post-item .post-body .post-intro {
   margin-bottom: .5rem;
   font-size: 0.875rem;
   color: #4f4f4f;
 }
 
-main div.selfcontainer section.blog-list .post-item .post-body a.post-link {
+main div.container section.blog-list .post-item .post-body a.post-link {
   text-decoration: none;
   font-size: .875rem;
   color: #5FCB71;
 }
 
-main div.selfcontainer .page-btn {
-  margin: 1rem 2rem;
+main div.container .page-btn {
   font-weight: bold;
-  font-size: 1rem;
+  font-size: 1.125rem;
   border-radius: 5px;
   background-color: #5FCB71;
   display: -webkit-box;
@@ -386,11 +398,11 @@ main div.selfcontainer .page-btn {
   display: flex;
 }
 
-main div.selfcontainer .page-btn :not(:last-child) {
+main div.container .page-btn :not(:last-child) {
   border-right: 1px solid #17471f;
 }
 
-main div.selfcontainer .page-btn a {
+main div.container .page-btn a {
   color: inherit;
   text-decoration: none;
   width: 100%;
@@ -400,16 +412,16 @@ main div.selfcontainer .page-btn a {
   color: #fff;
 }
 
-main div.selfcontainer .page-btn a:hover {
+main div.container .page-btn a:hover {
   color: #17471f;
 }
 
-main div.selfcontainer .page-btn a span.next {
+main div.container .page-btn a span.next {
   position: absolute;
   right: 0;
 }
 
-main div.selfcontainer .page-btn a span.prev {
+main div.container .page-btn a span.prev {
   position: absolute;
   left: 0;
 }
