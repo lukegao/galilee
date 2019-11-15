@@ -1,4 +1,4 @@
-{% load static wagtailimages_tags get_profile %}
+{% load static wagtailimages_tags profile_tags %}
 
 <!DOCTYPE html>
 <html class="no-js" lang="en">
@@ -19,6 +19,11 @@
         <meta name="viewport" content="width=device-width, initial-scale=1" />
 
         {# Global stylesheets #}
+        <link rel="apple-touch-icon" sizes="180x180" href="{% static 'image/apple-touch-icon.png' %}">
+        <link rel="icon" type="image/png" sizes="32x32" href="{% static '/favicon-32x32.png' %}">
+        <link rel="icon" type="image/png" sizes="16x16" href="{% static '/favicon-16x16.png' %}">
+        <link rel="manifest" href="{% static 'image/site.webmanifest' %}">
+
         <link rel="stylesheet" type="text/css" href="{% static 'css/galilee.css' %}">
         <script src="https://kit.fontawesome.com/6f63a0fb84.js" crossorigin="anonymous"></script>
 
@@ -32,7 +37,13 @@
         <header>
             <h1>{{ page.title }}</h1>
 
-            {% image profile.avatar as img %}
+            {% get_profile as profile %}
+
+            {% if profile is None %}
+            <div>Sorry, There is no siteowner</div>
+            {% else %}
+
+            {% image profile.avatar original as img %}
             <nav class="navbar">
                 <button class="navbar-toggler" data-target="#navigation">
                     <span class="navbar-toggler-icon"><i class="fas fa-bars"></i></span>
@@ -62,6 +73,8 @@
                     </div>
                 </div>
             </nav>
+            {% endif %}
+
         </header>
 
         {% block content %}{% endblock %}
