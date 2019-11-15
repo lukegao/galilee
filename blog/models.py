@@ -119,13 +119,13 @@ class BlogPostPage(Page):
         on_delete=models.SET_NULL,
     )
 
-    categories = ParentalManyToManyField("blog.BlogCategory", blank=True, null=True)
+    categories = ParentalManyToManyField("blog.BlogCategory", blank=True)
 
     content = StreamField(
         [
-            ('inline image', blocks.InlineImageBlock),
-            ('paragraph', blocks.SimpleRichTextBlock),
-            ('subscribe', blocks.SubscribeBlock),
+            ('inline_image', blocks.InlineImageBlock()),
+            ('paragraph', blocks.SimpleRichTextBlock()),
+            ('subscribe', blocks.SubscribeBlock()),
         ],
         null=True,
         blank=False,

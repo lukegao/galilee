@@ -12,8 +12,8 @@ from blog.models import BlogPostPage
 class AuthorProfile(models.Model):
     """Profile for author."""
 
-    first_name = models.CharField(max_length=50, blank=False, null=False, Default=Luke)
-    family_name = models.CharField(max_length=50, blank=False, null=False, Default=Gao)
+    first_name = models.CharField(max_length=50, blank=False, null=False, default="Luke")
+    family_name = models.CharField(max_length=50, blank=False, null=False, default="Gao")
     avatar = models.ForeignKey(
         "wagtailimages.Image",
         on_delete=models.SET_NULL,
