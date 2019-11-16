@@ -10,7 +10,7 @@
 {% block content %}
     <main>
         <div class="container">
-            <section class="subscribe">
+            {% comment %} <section class="subscribe">
                 <div class="heading">
                     <h2>DevBlog - A Blog Template Made For Developers</h2>
                     <div class="intro">
@@ -22,7 +22,7 @@
                         <input class="subscribe-btn" type="submit" value="Subscribe">
                     </form>
                 </div>
-            </section>
+            </section> {% endcomment %}
 
             <section class="blog-list">
             {% for post in posts %}

@@ -20,19 +20,6 @@ from streams import blocks
 
 
 @register_snippet
-class Subscription(models.Model):
-    """Static contents for subscription"""
-
-    title = models.CharField(max_length=255, blank=False, null=True)
-    intro = models.CharField(max_length=500, blank=False, null=True)
-
-    panels = [
-        FieldPanel('name'),
-        FieldPanel('intro'),
-    ]
-
-
-@register_snippet
 class BlogCategory(models.Model):
     """Blog Category for a snippet"""
 
