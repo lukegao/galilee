@@ -1,0 +1,6 @@
+{% load wagtailimages_tags %}
+{% image self.image max-1200x600 as image %}
+<figure class="figure" style="text-align: center">
+    <img src="{{ image.url }}" class="figure-img img-fluid rounded" alt="">
+    <figcaption class="figure-caption text-xs-right">{{ self.description }}</figcaption>
+</figure>

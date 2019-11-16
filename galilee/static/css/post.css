@@ -9,10 +9,6 @@ html, body {
   font-family: 'Roboto', sans-serif;
 }
 
-html h1, html h2, html h3, html h4, html h5, html h6, body h1, body h2, body h3, body h4, body h5, body h6 {
-  font-family: 'Liberata', serif;
-}
-
 header {
   background-color: #5FCB71;
   color: #fff;
@@ -232,11 +228,15 @@ header .navbar #navigation div.cta .cta-btn {
   padding: .75rem;
 }
 
+header .navbar #navigation div.cta .cta-btn:hover {
+  color: #17471f;
+}
+
 main {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   margin-left: 0;
-  padding: 3rem 1rem;
+  padding: 3rem 1rem 0 1rem;
 }
 
 @media (min-width: 840px) {
@@ -333,6 +333,11 @@ main div.container section.subscribe .heading form.signup input:last-child {
   font-weight: bold;
 }
 
+main div.container section.subscribe .heading form.signup input.subscribe-btn:hover {
+  cursor: pointer;
+  color: #17471f;
+}
+
 main div.container section.blog-list {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -397,6 +402,7 @@ main div.container section.blog-list .post-item .post-body a.post-link {
 main div.container .page-btn {
   font-weight: bold;
   font-size: 1.125rem;
+  line-height: 2;
   border-radius: 5px;
   background-color: #5FCB71;
   display: -webkit-box;
@@ -412,7 +418,6 @@ main div.container .page-btn a {
   color: inherit;
   text-decoration: none;
   width: 100%;
-  line-height: 2rem;
   text-align: center;
   position: relative;
   color: #fff;

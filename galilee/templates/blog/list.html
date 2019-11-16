@@ -3,6 +3,7 @@
 {% load static wagtailcore_tags wagtailimages_tags %}
 
 {% block extra_css %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}?version=12">
 {% endblock extra_css %}
 
 {% block body_class %}listpage{% endblock body_class %}
@@ -50,5 +51,5 @@
 {% endblock content %}
 
 {% block extra_js %}
-<script src="js/main.js"></script>
+<script src="{% static 'js/main.js' %}"></script>
 {% endblock extra_js %}

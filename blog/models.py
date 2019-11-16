@@ -112,7 +112,6 @@ class BlogPostPage(Page):
         [
             ('inline_image', blocks.InlineImageBlock()),
             ('paragraph', blocks.SimpleRichTextBlock()),
-            ('subscribe', blocks.SubscribeBlock()),
         ],
         null=True,
         blank=False,

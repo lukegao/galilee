@@ -23,11 +23,10 @@ class AboutPage(Page):
     ]
 
 
-@register_snippet
 class ProjectItem(Orderable):
     """Project Item to show in the carousel"""
 
-    page = ParentalKey(AboutPage, on_delete=models.SET_NULL, related_name="projects")
+    page = ParentalKey(AboutPage, on_delete=models.CASCADE, related_name="projects")
     name = models.CharField(max_length=255, blank=False, null=True)
     project_url = models.URLField(blank=True, null=True)
 
