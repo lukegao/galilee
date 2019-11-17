@@ -3,7 +3,7 @@
 {% load static wagtailcore_tags wagtailimages_tags %}
 
 {% block extra_css %}
-    <link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}?version=12">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}?version=1">
 {% endblock extra_css %}
 
 {% block body_class %}homepage{% endblock body_class %}
@@ -44,9 +44,11 @@
             {% endfor %}
             </section>
 
+            {% if posts|length > 10 %}
             <div class="page-btn">
                 <a href="/list">Next<span class="next"><i class="fas fa-arrow-circle-right fa-fw"></i></span></a>
             </div>
+            {% endif %}
         </div>
 
     </main>

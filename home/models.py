@@ -1,5 +1,4 @@
 from wagtail.core.models import Page
-
 from blog.models import BlogPostPage
 
 

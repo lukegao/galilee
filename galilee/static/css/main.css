@@ -6,6 +6,7 @@ html, body {
   text-align: left;
   background-color: #fff;
   height: 100%;
+  min-width: 480px;
   font-family: 'Roboto', sans-serif;
 }
 
