@@ -42,6 +42,6 @@ surlex==0.2.0
 unicodecsv==0.14.1
 Unidecode==1.1.1
 urllib3==1.25.8
-wagtail==2.11.6
+wagtail==2.11.8
 webencodings==0.5.1
 Willow==1.1
